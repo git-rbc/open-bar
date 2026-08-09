@@ -65,11 +65,6 @@ a{color:inherit;}
 .nav.scrolled .nav__links a{color:var(--ink);}
 .nav.scrolled.sobre-escuro .nav__links a{color:var(--cream);}
 .nav__links a:hover{color:var(--accent);}
-.nav__cta{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.7rem 1.1rem;font-weight:500;
-  border:1px solid var(--line-light);color:var(--cream);text-decoration:none;transition:.3s;}
-.nav.scrolled .nav__cta{border-color:var(--ink);color:var(--ink);}
-.nav.scrolled.sobre-escuro .nav__cta{border-color:var(--line-light);color:var(--cream);}
-.nav__cta:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
 .nav__burger{display:none;flex-direction:column;align-items:center;justify-content:center;
   width:44px;height:44px;background:transparent;border:0;padding:0;cursor:pointer;color:var(--cream);}
 .nav.scrolled .nav__burger{color:var(--ink);}
@@ -123,8 +118,6 @@ a{color:inherit;}
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 5s linear infinite;}
 .btn:hover{background:rgba(192,138,87,.18);color:#fff;}
 .btn--ghost{border-color:rgba(240,232,220,.32);}
-.btn--dark{color:var(--ink);border-color:var(--ink);}
-.btn--dark:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
 
 .dawn{height:22vh;background:linear-gradient(180deg,var(--night) 0%,#3a2f30 42%,#8a7566 70%,var(--paper) 100%);}
 
@@ -307,14 +300,6 @@ a{color:inherit;}
 .regras strong{font-weight:700;}
 @media(max-width:820px){.regras{grid-template-columns:1fr;}}
 
-/* ===== FECHAMENTO ===== */
-.valor{padding-block:clamp(3.5rem,9vh,7rem);text-align:center;}
-.valor__card{max-width:700px;margin-inline:auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.5rem,5vw,3.5rem);
-  border:1px solid var(--accent);background:linear-gradient(160deg,rgba(192,138,87,.1),transparent);}
-.valor__selo{color:var(--accent-txt);margin-bottom:1.6rem;}
-.valor__titulo{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.4rem,3.3vw,2.1rem);margin-bottom:1.4rem;line-height:1.3;}
-.valor__txt{color:var(--ink);font-weight:500;max-width:48ch;margin:0 auto 2.2rem;font-size:1.02rem;}
-
 /* ===== FOOTER ===== */
 .footer{background:var(--night);color:var(--cream);padding:clamp(2.5rem,6vh,4rem) 0 2rem;}
 .footer__in{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;}
@@ -325,7 +310,7 @@ a{color:inherit;}
 .footer__fine{max-width:var(--maxw);margin:2.2rem auto 0;padding-inline:var(--pad);font-size:.7rem;line-height:1.9;color:rgba(240,232,220,.72);border-top:1px solid var(--line-light);padding-top:1.4rem;}
 
 @media(max-width:820px){
-  .nav__links,.nav__cta{display:none;}
+  .nav__links{display:none;}
   .nav__burger{display:flex;}
   /* com os botoes empilhados a coluna encosta no "Role" */
   .scrollcue{display:none;}
@@ -350,12 +335,11 @@ a{color:inherit;}
       <a href="#pacotes">Pacotes</a>
       <a href="#funciona">Como funciona</a>
     </div>
-    <a class="nav__cta" href="#fechamento">Escolher o nosso</a>
     <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
   </div>
 </nav>
 <div class="menu" id="menu"><div class="menu__in">
-  <a href="#pacotes">Pacotes</a><a href="#funciona">Como funciona</a><a href="#fechamento">Escolher o nosso</a>
+  <a href="#pacotes">Pacotes</a><a href="#funciona">Como funciona</a>
 </div></div>
 
 <header class="overture" id="topo">
@@ -485,16 +469,6 @@ a{color:inherit;}
       <p>Estrutura, insumos, equipe e acabamento visual são <strong>da Indaiá</strong>. Nos Pacotes 5 e 6 entra também o balcão de apoio perto da pista, que deixa as bebidas já escolhidas ao alcance de quem está dançando.</p>
     </li>
   </ul>
-</section>
-
-<section class="valor wrap" id="fechamento">
-  <div class="valor__card reveal">
-    <p class="eyebrow valor__selo">O próximo passo</p>
-    <h2 class="valor__titulo">Escolham o pacote. O bar a gente monta.</h2>
-    <p class="valor__txt">Fale com o seu consultor para incluir o open bar no contrato. Os ajustes finais ficam para a Reunião Final, cerca de 30 dias antes do casamento.</p>
-    <a class="btn btn--dark" href="#pacotes">Rever os pacotes
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  </div>
 </section>
 
 </main>
