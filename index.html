@@ -140,6 +140,9 @@ a{color:inherit;}
 .nota{margin-top:1.8rem;padding:1rem 1.2rem;border-left:2px solid var(--accent);background:rgba(192,138,87,.07);
   font-size:.94rem;line-height:1.7;color:var(--ink);font-weight:500;max-width:66ch;}
 .nota strong{font-weight:700;}
+.nota ul{list-style:none;margin-top:.5rem;}
+.nota li{padding:.3rem 0 .3rem 1.1rem;position:relative;}
+.nota li::before{content:"";position:absolute;left:0;top:.85em;width:5px;height:1px;background:var(--accent);}
 
 /* ===== PACOTES (bloco escuro, sangra até a borda) ===== */
 .pacotes{background:var(--night);color:var(--cream);
@@ -347,7 +350,7 @@ a{color:inherit;}
       <span class="row"><i>OPEN BAR</i></span>
       <span class="row it"><i>do dia de vocês.</i></span>
     </h1>
-    <p class="overture__sub">A bebida do casamento de vocês servida a noite inteira, no valor por pessoa, sem surpresas no fim da festa.</p>
+    <p class="overture__sub">A bebida do casamento de vocês servida por até 8 horas, no valor por pessoa, sem surpresas no fim da festa.</p>
     <div class="overture__cta-row">
       <a class="btn btn--beam" href="#pacotes">Ver os pacotes
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -370,7 +373,7 @@ a{color:inherit;}
   <div class="sec__head">
     <div class="sec__meta"><span class="num">01</span><p class="eyebrow sec__eyebrow">Escolham o de vocês</p></div>
     <h2 class="sec__title reveal">Seis <em>pacotes</em></h2>
-    <p class="sec__lead reveal" data-d="1">Um valor por convidado, servido do começo ao fim da festa. Os seis lado a lado, com a marca de cada bebida escrita. Em dourado está o que o pacote adiciona ou faz upgrade em relação ao anterior.</p>
+    <p class="sec__lead reveal" data-d="1">Um valor por convidado, servido por até 8 horas de festa. Os seis lado a lado, com a marca de cada bebida escrita. Em dourado está o que o pacote adiciona ou faz upgrade em relação ao anterior.</p>
   </div>
 
   <p class="tab__hint">Arraste para o lado para comparar</p>
@@ -413,17 +416,25 @@ a{color:inherit;}
     </div>
   </div>
 
-  <p class="nota"><strong>Bom saber.</strong> Aos valores é somada a taxa de serviço de 15% sobre o consumo. Os valores de tabela podem ser reajustados até a data do evento, e quem já tem contrato fechado mantém o preço combinado. As marcas ficam registradas na Reunião Final, cerca de 30 dias antes do evento, e até lá o pacote pode ser trocado.</p>
+  <div class="nota">
+    <strong>Bom saber.</strong>
+    <ul>
+      <li>As marcas já vêm definidas no pacote. Na <strong>Reunião Final</strong>, cerca de 30 dias antes do evento, vocês ainda podem trocar de pacote, fazer upgrade ou incluir bebidas por consumo.</li>
+      <li><strong>Crianças de 0 a 12 anos</strong> têm condições diferentes. Consulte o seu consultor.</li>
+      <li>Aos valores é somada a taxa de serviço de 15% sobre o consumo.</li>
+      <li>Os valores de tabela podem ser reajustados até a data do evento. Quem já tem contrato fechado mantém o preço combinado.</li>
+    </ul>
+  </div>
 
   <div class="trilho" id="trilho">
     <div class="trilho__pin">
       <div class="trilho__track" id="track">
         <figure class="pc"><img src="fotos/bar.jpg" alt="Drinks no balcão do bar">
-          <figcaption class="pc__meta"><p class="pc__nome">O bar</p><p class="pc__sub">Montado e operado pela nossa equipe do começo ao fim.</p></figcaption></figure>
+          <figcaption class="pc__meta"><p class="pc__nome">O bar</p><p class="pc__sub">Montado e operado pela nossa equipe.</p></figcaption></figure>
         <figure class="pc"><img src="fotos/cerveja.jpg" alt="Cervejas no gelo" loading="lazy">
           <figcaption class="pc__meta"><p class="pc__nome">Sempre gelada</p><p class="pc__sub">Cerveja a partir do Pacote 2.</p></figcaption></figure>
         <figure class="pc"><img src="fotos/bandeja.jpg" alt="Garçom servindo drinks de bandeja" loading="lazy">
-          <figcaption class="pc__meta"><p class="pc__nome">O serviço</p><p class="pc__sub">O garçom passa servindo a noite inteira.</p></figcaption></figure>
+          <figcaption class="pc__meta"><p class="pc__nome">O serviço</p><p class="pc__sub">O garçom passa servindo durante todo o open bar.</p></figcaption></figure>
         <figure class="pc"><img src="fotos/drinks.jpg" alt="Drinks do open bar" loading="lazy">
           <figcaption class="pc__meta"><p class="pc__nome">Os drinks</p><p class="pc__sub">Open Drinks Classic nos Pacotes 5 e 6.</p></figcaption></figure>
         <figure class="pc"><img src="fotos/caipirinha.jpg" alt="Caipirinhas servidas na festa" loading="lazy">
@@ -442,7 +453,7 @@ a{color:inherit;}
     <li class="reveal">
       <span class="regras__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
       <h3>À vontade por até 8 horas</h3>
-      <p>As bebidas do pacote que vocês escolherem são <strong>à vontade</strong>, por até 8 horas de festa. Ninguém abre conta e ninguém paga nada na hora.</p>
+      <p>As bebidas do pacote que vocês escolherem são <strong>à vontade, por até 8 horas</strong> de festa. Se o evento passar disso, dá para contratar hora adicional e seguir com bebida.</p>
     </li>
     <li class="reveal" data-d="1">
       <span class="regras__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M3 14h18M5 14a7 7 0 0 1 14 0"/><path d="M8.5 7.2 12 4l3.5 3.2"/><path d="M4 18h16"/></svg></span>
@@ -457,7 +468,7 @@ a{color:inherit;}
     <li class="reveal" data-d="1">
       <span class="regras__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M20.5 12a8.5 8.5 0 1 1-2.5-6"/><path d="M20.5 3v5h-5"/></svg></span>
       <h3>Não falta bebida</h3>
-      <p>A nossa equipe repõe durante todo o evento. <strong>Zero preocupação</strong> com a bebida acabar no meio da festa.</p>
+      <p>A nossa equipe cuida da reposição durante todo o open bar. <strong>Zero preocupação</strong> com a bebida acabar no meio da festa.</p>
     </li>
   </ul>
 </section>
