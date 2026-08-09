@@ -130,8 +130,8 @@ a{color:inherit;}
 
 /* ===== FRASE DE ABERTURA ===== */
 .statement{padding-block:clamp(3.5rem,9vh,6rem);}
-.statement__eyebrow{color:var(--accent-txt);margin-bottom:2rem;display:flex;gap:1rem;align-items:center;}
-.statement__eyebrow::before{content:"";width:44px;height:1px;background:var(--accent);}
+/* sem o fiozinho do accent: colado no texto ele lia como um hifen ("-O que fica") */
+.statement__eyebrow{color:var(--accent-txt);margin-bottom:2rem;}
 .statement__text{font-family:var(--serif);font-weight:400;line-height:1.22;
   font-size:clamp(1.6rem,4.2vw,3.1rem);max-width:26ch;letter-spacing:-.01em;}
 .statement__text .accent{color:var(--accent-txt);font-style:italic;}
@@ -396,11 +396,11 @@ a{color:inherit;}
   <div class="overture__in">
     <img class="overture__logo" src="assets/indaia-wordmark-white-trim.png" alt="Eventos Indaiá">
     <p class="eyebrow overture__kicker">Open Bar Indaiá</p>
-    <h1 class="hero-title" id="heroTitle" aria-label="Cada brinde, uma memória">
-      <span class="row"><i>CADA BRINDE,</i></span>
-      <span class="row it"><i>uma memória.</i></span>
+    <h1 class="hero-title" id="heroTitle" aria-label="Open bar do dia de vocês">
+      <span class="row"><i>OPEN BAR</i></span>
+      <span class="row it"><i>do dia de vocês.</i></span>
     </h1>
-    <p class="overture__sub">A bebida do casamento de vocês servida a noite inteira, no valor por pessoa, sem conta no fim da festa.</p>
+    <p class="overture__sub">A bebida do casamento de vocês servida a noite inteira, no valor por pessoa, sem custos extras no fim da festa.</p>
     <div class="overture__cta-row">
       <a class="btn btn--beam" href="#pacotes">Ver os pacotes
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -449,7 +449,7 @@ a{color:inherit;}
         </div>
         <div class="item">
           <h4>Balcão de pista</h4>
-          <p>Um segundo balcão de bebidas montado na pista de dança, para o convidado não precisar sair da festa para se servir.</p>
+          <p>Um balcão de apoio montado perto da pista com as bebidas do open contratado. O convidado pega ali mesmo, sem sair da festa, e o garçom segue passando e servindo.</p>
         </div>
       </section>
       <section class="painel painel--up">
@@ -527,7 +527,7 @@ a{color:inherit;}
     <li class="reveal" data-d="1">
       <span class="regras__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M4 19h16M6 19V9l6-4 6 4v10"/><path d="M9 19v-5h6v5"/></svg></span>
       <h3>Bar montado por nós</h3>
-      <p>Estrutura, insumos, equipe e acabamento visual são <strong>da Indaiá</strong>. Nos Pacotes 5 e 6 entra também o balcão de pista, para o convidado não precisar sair da dança para pegar bebida.</p>
+      <p>Estrutura, insumos, equipe e acabamento visual são <strong>da Indaiá</strong>. Nos Pacotes 5 e 6 entra também o balcão de apoio perto da pista, com as bebidas do open ao alcance de quem está dançando.</p>
     </li>
   </ul>
 </section>
@@ -535,8 +535,8 @@ a{color:inherit;}
 <section class="sig">
   <div class="sig__pin">
     <div class="sig__marquee" aria-hidden="true">
-      <div class="sig__row sig__row--a">CADA BRINDE, UMA MEMÓRIA · CADA BRINDE, UMA MEMÓRIA · CADA BRINDE, UMA MEMÓRIA · </div>
-      <div class="sig__row sig__row--b">CADA BRINDE, UMA MEMÓRIA · CADA BRINDE, UMA MEMÓRIA · CADA BRINDE, UMA MEMÓRIA · </div>
+      <div class="sig__row sig__row--a">OPEN BAR INDAIÁ · OPEN BAR INDAIÁ · OPEN BAR INDAIÁ · OPEN BAR INDAIÁ · </div>
+      <div class="sig__row sig__row--b">OPEN BAR INDAIÁ · OPEN BAR INDAIÁ · OPEN BAR INDAIÁ · OPEN BAR INDAIÁ · </div>
     </div>
     <figure class="sig__hero"><img src="fotos/brinde-pb.jpg" alt="Taças erguidas em um brinde" loading="lazy"></figure>
     <img class="sig__logo" src="assets/indaia-wordmark-white-trim.png" alt="Eventos Indaiá">
@@ -624,7 +624,7 @@ const CATS = [
       null, null, null, null, {v:['10 drinks'], t:'entra'}, '=' ] },
 
   { l:'Balcão de pista', cels:[
-      null, null, null, null, {v:['Incluso'], t:'entra'}, '=' ] },
+      null, null, null, null, {v:['Balcão de apoio perto da pista'], t:'entra'}, '=' ] },
 
   { l:'Open Caipirinha Classic', cels:[
       null, null, null, null, null, {v:['5 sabores'], t:'entra'} ] },
