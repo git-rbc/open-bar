@@ -248,12 +248,7 @@ a{color:inherit;}
 }
 
 /* ===== TRILHO (o bloco prende na tela e as fotos correm de lado) ===== */
-.trilho__head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-  margin:clamp(2.5rem,6vh,4rem) 0 .5rem;}
-.trilho__titulo{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);}
-.trilho__titulo em{font-style:italic;color:var(--accent);}
-.trilho__hint{font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(240,232,220,.72);}
-.trilho{position:relative;margin-inline:calc(50% - 50vw);}
+.trilho{position:relative;margin-top:clamp(2.5rem,6vh,4rem);margin-inline:calc(50% - 50vw);}
 .trilho__pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
   display:flex;align-items:center;perspective:1500px;}
 .trilho__track{display:flex;gap:clamp(1.4rem,3.2vw,3rem);align-items:center;
@@ -420,10 +415,6 @@ a{color:inherit;}
 
   <p class="nota"><strong>Bom saber.</strong> Aos valores é somada a taxa de serviço de 15% sobre o consumo. Os valores de tabela podem ser reajustados até a data do evento, e quem já tem contrato fechado mantém o preço combinado.</p>
 
-  <div class="trilho__head">
-    <h3 class="trilho__titulo">A noite <em>servida</em></h3>
-    <p class="trilho__hint">Role &middot; as fotos passam de lado</p>
-  </div>
   <div class="trilho" id="trilho">
     <div class="trilho__pin">
       <div class="trilho__track" id="track">
