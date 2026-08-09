@@ -210,17 +210,34 @@ a{color:inherit;}
   font-size:.82rem;font-weight:500;color:rgba(240,232,220,.92);}
 .tab__legenda span{display:inline-flex;align-items:center;gap:.5rem;}
 
-/* o que a celula so consegue chamar pelo nome */
-.detalhes{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:clamp(1.2rem,2.2vw,2rem);
-  margin-top:clamp(2.2rem,5vh,3.2rem);}
-.det{border-top:1px solid rgba(240,232,220,.55);padding-top:.9rem;}
-.det h4{font-family:var(--serif);font-weight:600;font-size:1.32rem;line-height:1.15;}
-.det__quem{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
-  margin:.3rem 0 .55rem;font-weight:500;}
-.det ul{list-style:none;}
-.det li{font-size:.86rem;font-weight:500;line-height:1.4;color:rgba(240,232,220,.94);
-  padding:.36rem 0;border-bottom:1px solid rgba(240,232,220,.14);}
-.det p{font-size:.88rem;font-weight:500;line-height:1.65;color:rgba(240,232,220,.94);}
+/* ===== OS OPENS POR DENTRO =====
+   quatro cartoes soltos depois da tabela confundiam: nao diziam a quem pertenciam,
+   repetiam "Pacote 5 e 6" em cada um e misturavam lista com paragrafo em alturas
+   diferentes. viraram DOIS paineis, na pergunta que o cliente faz: o que os dois
+   pacotes de cima tem, e o que so o 6 tem. */
+.opens{margin-top:clamp(2.4rem,6vh,3.6rem);}
+.opens__head{border-top:1px solid rgba(240,232,220,.24);padding-top:1.3rem;margin-bottom:1.6rem;}
+.opens__eyebrow{color:var(--accent);}
+.opens__titulo{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.4vw,2.6rem);
+  line-height:1.05;margin-top:.5rem;}
+.opens__titulo em{font-style:italic;color:var(--accent);}
+.opens__grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(1.2rem,2.4vw,2rem);align-items:start;}
+@media(max-width:900px){.opens__grid{grid-template-columns:1fr;}}
+.painel{border:1px solid rgba(240,232,220,.22);background:rgba(255,255,255,.03);padding:1.5rem 1.4rem 1.6rem;}
+.painel--up{border-color:rgba(192,138,87,.6);background:linear-gradient(160deg,rgba(192,138,87,.11),transparent);}
+.painel__quem{display:inline-block;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  background:rgba(240,232,220,.16);color:var(--cream);padding:.32rem .62rem;margin-bottom:1.3rem;}
+.painel--up .painel__quem{background:var(--accent);color:#fff;}
+.item+.item{margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid rgba(240,232,220,.16);}
+.item h4{font-family:var(--serif);font-weight:600;font-size:1.36rem;line-height:1.15;
+  display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;}
+.item h4 span{font-family:var(--sans);font-weight:600;font-size:.58rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);}
+.item p{margin-top:.5rem;font-size:.9rem;font-weight:500;line-height:1.65;color:rgba(240,232,220,.94);}
+.item ul{list-style:none;margin-top:.7rem;column-count:2;column-gap:1.6rem;}
+@media(max-width:560px){.item ul{column-count:1;}}
+.item li{break-inside:avoid;font-size:.88rem;font-weight:500;line-height:1.4;color:rgba(240,232,220,.94);
+  padding:.34rem 0;border-bottom:1px solid rgba(240,232,220,.14);}
 
 @media(max-width:1180px){
   .tab__corner,.lin{width:112px;}
@@ -400,7 +417,7 @@ a{color:inherit;}
   <div class="sec__head">
     <div class="sec__meta"><span class="num">01</span><p class="eyebrow sec__eyebrow">Escolham o de vocês</p></div>
     <h2 class="sec__title reveal">Seis <em>pacotes</em></h2>
-    <p class="sec__lead reveal" data-d="1">Um valor por convidado, servido do começo ao fim da festa. Os seis lado a lado, com a marca de cada bebida escrita. Em dourado está o que entra ou troca de marca em relação ao pacote anterior.</p>
+    <p class="sec__lead reveal" data-d="1">Um valor por convidado, servido do começo ao fim da festa. Os seis lado a lado, com a marca de cada bebida escrita. Em dourado está o que o pacote adiciona ou faz upgrade em relação ao anterior.</p>
   </div>
 
   <p class="tab__hint">Arraste para o lado para comparar</p>
@@ -408,30 +425,38 @@ a{color:inherit;}
     <table class="tab" id="tab" aria-label="Comparativo dos seis pacotes de open bar"></table>
   </div>
   <p class="tab__legenda">
-    <span><span class="cel__tag">Entra</span> aparece pela primeira vez</span>
-    <span><span class="cel__tag cel__tag--sobe">Sobe para</span> troca de marca</span>
+    <span><span class="cel__tag">Adiciona</span> a bebida aparece pela primeira vez</span>
+    <span><span class="cel__tag cel__tag--sobe">Upgrade para</span> a mesma bebida sobe de marca</span>
   </p>
 
-  <div class="detalhes">
-    <div class="det">
-      <h4>Open Drinks Classic</h4>
-      <p class="det__quem">Pacotes 5 e 6</p>
-      <ul id="listaDrinks"></ul>
+  <div class="opens">
+    <div class="opens__head">
+      <p class="eyebrow opens__eyebrow">Os opens por dentro</p>
+      <h3 class="opens__titulo">O que vem <em>junto</em></h3>
     </div>
-    <div class="det">
-      <h4>Open Caipirinha Classic</h4>
-      <p class="det__quem">Pacote 6</p>
-      <ul><li>Vinho</li><li>Morango</li><li>Tropical</li><li>Limão</li><li>Framboesa</li></ul>
-    </div>
-    <div class="det">
-      <h4>Welcome Drink</h4>
-      <p class="det__quem">Pacote 6</p>
-      <p>O garçom recepciona os convidados com taça de espumante logo na chegada.</p>
-    </div>
-    <div class="det">
-      <h4>Balcão de pista</h4>
-      <p class="det__quem">Pacotes 5 e 6</p>
-      <p>Um segundo balcão de bebidas montado na pista de dança, para o convidado não precisar sair da festa para se servir.</p>
+    <div class="opens__grid">
+      <section class="painel">
+        <p class="painel__quem">Nos pacotes 5 e 6</p>
+        <div class="item">
+          <h4>Open Drinks Classic <span>11 drinks</span></h4>
+          <ul id="listaDrinks"></ul>
+        </div>
+        <div class="item">
+          <h4>Balcão de pista</h4>
+          <p>Um segundo balcão de bebidas montado na pista de dança, para o convidado não precisar sair da festa para se servir.</p>
+        </div>
+      </section>
+      <section class="painel painel--up">
+        <p class="painel__quem">Só no pacote 6</p>
+        <div class="item">
+          <h4>Open Caipirinha Classic <span>5 sabores</span></h4>
+          <p>Vinho, Morango, Tropical, Limão e Framboesa.</p>
+        </div>
+        <div class="item">
+          <h4>Welcome Drink</h4>
+          <p>O garçom recepciona os convidados com taça de espumante logo na chegada.</p>
+        </div>
+      </section>
     </div>
   </div>
 
@@ -568,7 +593,7 @@ const PACOTES = [
 const CATS = [
   { l:'Soft', cels:[
       {v:SOFT}, '=', '=', '=',
-      {v:SOFT_S, t:'entra', rot:'Entra o suco', so:['Suco de laranja']}, '=' ] },
+      {v:SOFT_S, t:'entra', rot:'Adiciona o suco', so:['Suco de laranja']}, '=' ] },
 
   { l:'Cerveja', cels:[
       null, {v:['Brahma litro'], t:'entra'}, '=', '=',
@@ -619,7 +644,7 @@ function celula(cels, i){
   const val = (c === '=') ? heranca(cels, i) : c.v;
   const novo = (x) => mudou && (!c.so || c.so.indexOf(x) > -1);
   const tag = mudou
-    ? `<span class="cel__tag${c.t === 'sobe' ? ' cel__tag--sobe' : ''}">${c.rot || (c.t === 'sobe' ? 'Sobe para' : 'Entra')}</span>`
+    ? `<span class="cel__tag${c.t === 'sobe' ? ' cel__tag--sobe' : ''}">${c.rot || (c.t === 'sobe' ? 'Upgrade para' : 'Adiciona')}</span>`
     : '';
   return `<td class="cel${sel}">
     <ul>${val.map(x=>`<li${novo(x) ? ' class="novo"' : ''}>${x}</li>`).join('')}</ul>${tag}</td>`;
